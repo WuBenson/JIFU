@@ -1,0 +1,37 @@
+{% extends "base.html" %} 
+{% block title %} 工程事蹟 {% endblock %} 
+{% block content %} 
+{% load staticfiles %}
+<link href="{% static "css/style.css"%}" rel="stylesheet" type="text/css" />
+<div class="subjectDiv" style="font-family: Microsoft JhengHei;text-align:center">
+    <h2>{{monophoto.palbum.atitle}}&nbsp;
+    <span class="badge badge-light" style="font-size:14px">照片總數 : {{totalphoto}}</span>
+    </h2><hr>
+</div>
+<div class="normalDiv" style="font-family: Microsoft JhengHei;text-align:center;font-size:18px">
+    <p>
+        <strong>拍攝地點</strong> : {{monophoto.palbum.alocation}}<br>
+        <strong>拍攝時間</strong> : {{monophoto.palbum.adate}}
+    </p>
+    <p><strong>內容</strong> : {{monophoto.palbum.adesc}}</p>
+</div>
+<div class="rounded shadow-lg p-3 mb-5 bg-white"style="width:50%;margin:auto;border-style:groove;">
+    <div class="row" style="padding-top:15px;padding-bottom:25px;">
+        {% for photo in photos %}
+        <div class="col-sm-3" style="padding-left:25px">
+            <a href="/albumphoto/{{photo.id}}/{{album}}/"><img class="album" style="border-radius: 10%;" src="/media/{{photo.pimg}}" width="160" height="160" border="0"/></a>
+        </div>
+        {% if forloop.counter|divisibleby:4 %}
+        </div><div class="row" style="padding-top:15px;padding-bottom:25px;">
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+<div style="width:50%;margin:auto;">
+    <button class="btn btn-danger">
+        <a href="/album/" style="color:white;font-weight:bold;font-family:Microsoft JhengHei">回上一頁</a>
+    </button>
+</div>
+
+
+{% endblock %}

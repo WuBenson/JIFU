@@ -1,0 +1,41 @@
+{% extends "base.html" %} 
+{% block title %} 工程事蹟 {% endblock %} 
+{% block content %} 
+{% load staticfiles %}
+{% load extras %}
+<link href="{% static "css/style.css"%}" rel="stylesheet" type="text/css" />
+<div class="subjectDiv" style="font-family: Microsoft JhengHei;text-align:center"><h2>工程相簿總覽<h2><hr></div>
+<div class="actionDiv" style="text-align:center">
+    <button type="button" class="btn btn-success" style="font-family: Microsoft JhengHei;">相簿總覽:
+            <span class="badge badge-light">{{totalalbum}}</span>
+    </button>
+</div>
+<div class="normalDiv"><br></div>
+
+<div class="row" style="width:fit-content;padding-bottom:20px;padding-left:10%;font-family: Microsoft JhengHei;">
+{% for album in albums %}
+<div class="column" style="padding-left:60px">
+    <div class="card" style="height:335px;width:250px">
+        {% if lengths|extras:forloop.counter0 == 0 %}
+        <img  class="card-img-top" src="{% static "images/nopic.png" %}" alt="暫無圖片" width="120px" height="180px" border="0"/>
+        {% else %}
+        <a href="/albumshow/{{album.id}}/">
+            <img class="card-img-top" src="/media/{{photos|extras:forloop.counter0}}" style="height:186px"  border="0"/>
+        </a>
+        {% endif %}
+        <div class="card-body" style="padding:10px;border:0px;">
+            <p class="card-text" style="font-weight:bold; font-size:16px;padding-top:15px;">{{album.alocation}}</p>
+            <h5 class="card-title"style="font-size:14px">{{album.atitle}}</h5>
+            {% if lengths|extras:forloop.counter0 != 0 %}
+                <div style="padding-top:5%"><a href="/albumshow/{{album.id}}/" class="btn btn-danger">共 {{lengths|extras:forloop.counter0}} 張</a></div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% if forloop.counter|divisibleby:5 %}
+    </div>
+    <div class="row" style="width:fit-content;padding-bottom:10px;padding-top:10px;padding-left:10%;font-family: Microsoft JhengHei;">
+{% endif %}
+{% endfor %}
+</div>
+{% endblock %}

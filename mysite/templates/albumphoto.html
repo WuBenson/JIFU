@@ -1,0 +1,18 @@
+{% extends "base.html" %} 
+{% block title %} 工程事蹟 {% endblock %} 
+{% block content %} 
+{% load staticfiles %}
+<link href="{% static "css/style.css"%}" rel="stylesheet" type="text/css" />
+<div class="subjectDiv" style="text-align:center;font-family: Microsoft JhengHei;font-size:18px;width:50%;margin:auto;">
+    <h2>{{photo.palbum.atitle}}</h2><hr>
+</div>
+
+<div class="photoDiv" style="width:50%;margin:auto;">
+    <img src="/media/{{photo.pimg}}" style="border-radius:10%;width:100%;height:600px">
+    
+</div>
+<div style="width:50%;margin:auto;padding-top:20px;">
+<button class="btn btn-danger">
+        <a href="/albumshow/{{album}}" style="color:white;font-weight:bold;font-family:Microsoft JhengHei">回上一頁</a>
+</button></div>
+{% endblock %}

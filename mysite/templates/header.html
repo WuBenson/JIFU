@@ -1,0 +1,66 @@
+{% load staticfiles %}
+
+<nav class="navbar navbar-expand-lg navbar-default" style="background-color: black">
+        <img class="imgsize" alt="" src="{% static "images/logo.jpg"%}" style="width:50px;">
+    <span class="navbar-brand" style="font-size:20px;font-weight:bold;color:black;font-family: Microsoft JhengHei;">
+        集福工程行
+    </span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="glyphicon glyphicon-align-justify" aria-hidden="true" style="font-size:20px"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item {% if nbar == 'home' %}active{% endif %}">
+                <a class="nav-link" href="/home/" style="color:black;">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                    首頁
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown {% if nbar == 'hire' or nbar == 'news'%}active{% endif %}">
+                    <a class="nav-link dropdown-toggle" href="#" style="color:black;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>最新消息
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" style="color:black;" href="/service/">服務項目</a>
+                        <a class="dropdown-item" style="color:black;" href="/hire/">徵才資訊</a>
+                    </div>
+            </li>
+            <li class="nav-item {% if nbar == 'contact' %}active{% endif %}">
+                <a class="nav-link" href="/aboutus/" style="color:black;">
+                    <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>    
+                    關於集福
+                </a>
+            </li>
+            <li class="nav-item {% if nbar == 'show' %}active{% endif %}">
+                <a class="nav-link" href="/test/" style="color:black;">
+                    <span class="glyphicon glyphicon-book" aria-hidden="true"></span>    
+                    工程實績
+                </a>
+            </li>
+            <li class="nav-item {% if nbar == 'drop' %}active{% endif %}">
+                <a class="nav-link" href="/mail/" style="color:black;">
+                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>    
+                    寄信給我
+                </a>
+            </li>
+            
+        </ul>
+        <!-- <ul class="nav justify-content-end">
+            {% if status == 'login'  %}
+            <li class="nav-item">
+                <span style="color:black;">{{username}}</span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout/">登出</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="/login/">登入管理</a>
+            </li>
+            {% endif %}
+        </ul> -->
+    </div>
+</nav>
+<img src="{% static "images/jifu_logo.png"%}" class="logo" style="display:block;margin:auto;height:auto;">

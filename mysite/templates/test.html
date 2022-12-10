@@ -1,0 +1,40 @@
+{% extends "base.html" %} 
+{% block title %} 工程實績|集福工程行 {% endblock %} 
+{% block content %} 
+{% load staticfiles %}
+
+<link href="{% static "css/style.css"%}" rel="stylesheet" type="text/css" />
+<div class="subjectDiv" style="font-family: Microsoft JhengHei;text-align:center"><h2>工程相簿總覽</h2><hr></div>
+<div class="actionDiv" style="text-align:center">
+    <button type="button" class="btn btn-success" style="font-family: Microsoft JhengHei;">相簿總覽:
+            <span class="badge badge-light">{{totalnum}}</span>
+    </button>
+    
+</div>
+<br>
+<div class="myborder" style="width:50%;margin:auto;">
+<div class="row">
+{% for i,j,k,l in z%}
+<div class="col-sm-4" style="padding:5%">
+    <div class="card">
+        <a href="/testshow/{{i}}/{{j}}/">
+            <img class="card-img-top" src="{{STATIC_URL}}/static/images/{{i}}/image1.jpg" style="width:100%"  border="0"/>
+        </a>
+        <div class="card-body" style="padding:10px;border:0px;">
+            <p class="card-text" style="font-weight:bold; font-size:16px;padding-top:15px;">{{l}}</p>
+            <h5 class="card-title"style="font-size:14px">{{k}}</h5>
+            
+        </div>
+        <div style="padding-bottom:10%;"><a href="/testshow/{{i}}/{{j}}/" class="btn btn-danger">共 {{j}} 張</a></div>
+    </div>
+</div>
+{% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class="row">
+{% endif %}
+
+{% endfor%}
+</div>
+
+</div>
+{% endblock %}

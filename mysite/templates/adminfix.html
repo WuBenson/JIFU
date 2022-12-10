@@ -1,0 +1,83 @@
+{% extends "base.html" %} 
+{% block title %} 工程事蹟 {% endblock %} 
+{% block content %} 
+{% load staticfiles %}
+<link href="{% static "css/style.css"%}" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+    function confirmLink(message){
+        if (message == "")message = "確定";
+        document.returnValue = confirm(message);
+    }
+</script>
+
+<div class="subjectDiv" style="font-family: Microsoft JhengHei;text-align:center">
+    <h2>工程事蹟管理介面-修改相簿資訊&nbsp;
+        <span class="badge badge-light" style="font-size:14px">照片總數 : {{totalphoto}}</span>
+    </h2><hr>
+</div>
+<div class="panel panel-primary" style="width:50%;margin-left:25%;">
+    <div class="panel-heading" style="font-size:20px;font-family:Microsoft JhengHei;">
+        <form action="/adminfix/{{album.id}}/999999/" method="POST" name="form1" id="form1" enctype="multipart/form-data">
+        {% csrf_token %}
+            相簿內容
+    </div>
+        <div class="panel-body" style="font-size:20px;font-family:Microsoft JhengHei;">
+            <p>相簿名稱:
+                <input name="album_title" type="text" id="album_title" value="{{album.atitle}}"/>
+            </p>
+            <p>拍攝地點:
+                <input name="album_location" type="text" id="album_location" value="{{album.alocation}}"/>
+            </p>
+            <p>相簿說明:
+                <textarea name="album_desc" type="text" id="album_desc" cols="45" rows="5">{{album.adesc}}</textarea>
+            </p>    
+            <hr style="width:100%">
+            <div class="normalDiv">
+                <p class="heading">新增照片</p>
+                <p>照片1
+                    <input type="file" name="ap_picurl1" id="ap_picurl1">
+                </p>
+                <p>照片2
+                    <input type="file" name="ap_picurl2" id="ap_picurl2">
+                </p>
+                <p>照片3
+                    <input type="file" name="ap_picurl3" id="ap_picurl3">
+                </p>
+                <p>照片4
+                    <input type="file" name="ap_picurl4" id="ap_picurl4">
+                </p>
+                <p>照片5
+                    <input type="file" name="ap_picurl5" id="ap_picurl5">
+                </p>
+                <p>
+                    <input type="submit" class="btn btn-warning btn-md" name="button" id="button" value="更新及上傳"/>
+                    <a class="btn btn-danger" name="button2" id="button2" href="/adminmain/">離開</a>
+                </p>
+            </div>
+        </div>
+    </form>
+    {{message}}
+    <div class="panel-footer">
+        <p class="heading" style="font-size:18px;font-family: Microsoft JhengHei;text-align:center">
+            管理照片
+        </p>
+        <div class="row" style="padding-top:5px;padding-bottom:15px;">
+            {% for photo in photos %}
+            <div class="col-sm-2" style="padding-left:25px;">
+                <div class="picDiv">
+                    <img src="/media/{{photo.pimg}}/" width="120" height="120" border="0"/>
+                </div>
+                <div class="albuminfo" style="text-align:center">
+                    <a href="/adminfix/{{photo.palbum.id}}/{{photo.id}}/delete/" onclick="confirmLink('確定要刪除這張照片嗎?');return document.returnValue"><span class="glyphicon glyphicon-trash"></span>刪除照片</a>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:5 %}
+        </div><div class="row" style="padding-top:15px;padding-bottom:25px;">
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

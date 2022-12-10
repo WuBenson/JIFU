@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="合力土木工程公司-集福工程行">
+    <meta property="og:url" content="https://jifu.herokuapp.com/">
+    <meta property="og:image" content="https://jifu.herokuapp.com/static/images/logo.jpg">
+    <meta property="og:description" content="經銷各廠牌高壓磚銷售，並具最專業團隊施工，基地開挖、襯沙至鋪設所需材料及機具，皆可含工帶料施作，為您提供全方位完善之服務品質!服務項目:高壓混凝土磚、連鎖磚、圍牆磚、植草磚、路緣石、界石等。">
+    <meta name="description" content="服務項目:高壓混凝土磚、連鎖磚、圍牆磚、植草磚、路緣石、界石等。經銷各廠牌高壓磚銷售，並具最專業團隊施工，基地開挖、襯沙至鋪設所需材料及機具，皆可含工帶料施作，為您提供全方位完善之服務品質!">
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/png" href="{{STATIC_URL}}/static/fa.ico"/>
+
+   
+    
+</head>
+
+<body>
+    <div class="container-fluid">
+    {% include 'header.html' %}
+    {% block content %} {% endblock %}
+    <div class="hi" style="height:100%;margin:0px auto;"><br></div>
+    {% include 'footer.html' %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends "base.html" %} 
+{% block title %} 工程事蹟 {% endblock %} 
+{% block content %} 
+{% load staticfiles %}
+{% load extras %}
+<link href="{% static "css/style.css"%}" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+    function confirmLink(message){
+        if (message == "")message = "確定";
+        document.returnValue = confirm(message);
+    }
+</script>
+
+<div class="subjectDiv" style="font-family: Microsoft JhengHei;text-align:center"><h2>相簿管理介面&nbsp;<span class="badge badge-light" style="font-size:14px">&nbsp;相簿總數 : {{totalalbum}}</span></h2><hr></div>
+
+    <div class="row" style="width:50%;margin:auto;">
+        <div class="col-sm-3">
+            <a href="/adminadd/" class="btn btn-warning">新增相簿</a>
+        </div>
+    </div>
+
+<div style="width:50%;margin:auto;">
+    <div class="row" style="padding-top:15px;padding-bottom:25px;">
+    {% for album in albums %}
+    <div class="col-sm-3" style="padding-left:25px">
+        <div class="picDiv">
+            {% if lengths|extras:forloop.counter0 == 0 %}
+            <img src="{% static "images/nopic.png" %}" alt="暫無圖片" width="120px" height="120px" border="0"/>
+            {% else %}
+            <a href="/adminfix/{{album.id}}/">
+                <img src="/media/{{photos|extras:forloop.counter0}}" width="120px" height="120px" border="0"/>
+            </a>
+            {% endif %}
+        </div>
+        <div class="albuminfo">
+            <a href="/adminfix/{{album.id}}/">{{album.atitle}}</a><br>
+            <span class="smalltext">共 {{lengths|extras:forloop.counter0}} 張</span><br>
+            <a href="/adminmain/{{album.id}}/" class="smalltext" onclick="confirmLink('您確定要刪除相片簿嗎?');return document.returnValue">(刪除相簿)</a><br>
+        </div>
+    </div>
+    {% if forloop.counter|divisibleby:4 %}
+        </div><div class="row" style="padding-top:15px;padding-bottom:25px;">
+    {% endif %}
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %} 
+{% block title %} 工程照片|集福工程行 {% endblock %} 
+{% block content %} 
+{% load staticfiles %}
+<link href="{% static "css/style.css"%}" rel="stylesheet" type="text/css" />
+<div class="subjectDiv" style="text-align:center;font-family: Microsoft JhengHei;font-size:18px;width:50%;margin:auto;">
+    <h2>{{title}}</h2><hr style="width:100%">
+</div>
+
+<div class="row" style="width:50%;margin:auto;padding-bottom:20px;text-align:center;">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">{% if plast >= 1 %}
+        
+            <button class="btn btn-success">
+                <a href="/testalbum/{{fid}}/{{plast}}" style="color:white;font-weight:bold;font-family:Microsoft JhengHei"><</a>
+            </button>
+        
+        {% endif %}
+        
+            <button class="btn btn-danger">
+                <a href="/testshow/{{fid}}/{{total}}" style="color:white;font-weight:bold;font-family:Microsoft JhengHei">離開</a>
+            </button>
+       
+        {% if pnext <= total%}
+        
+            <button class="btn btn-success">
+                <a href="/testalbum/{{fid}}/{{pnext}}" style="color:white;font-weight:bold;font-family:Microsoft JhengHei">></a>
+            </button>
+        
+        {% endif %}</div>
+        <div class="col-sm-4"></div>
+</div>
+
+
+<div class="photoDiv" style="width:50%;margin:auto;">
+    <img src="{{STATIC_URL}}/static/images/{{fid}}/image{{pid}}.jpg" style="border-radius:10%;width:100%;">
+</div>
+
+{% endblock %}

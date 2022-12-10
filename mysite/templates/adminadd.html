@@ -1,0 +1,32 @@
+{% extends "base.html" %} 
+{% block title %} 工程事蹟 {% endblock %} 
+{% block content %} 
+{% load staticfiles %}
+<link href="{% static "css/style.css"%}" rel="stylesheet" type="text/css" />
+
+<div class="panel panel-primary" style="width:50%;margin-left:25%;font-size:20px;font-family:Microsoft JhengHei;">
+    <div class="panel-heading">
+        相簿管理
+    </div>
+    <form action="./" method="POST" name="form1" id="form1">
+    {% csrf_token %}
+    <div class="panel-body" style="font-size:20px;font-family:Microsoft JhengHei;">
+    <p>相簿名稱: 
+        <input type="text" name="album_title" id="album_title" required />
+    </p>
+    <p>拍攝地點: 
+        <input type="text" name="album_location" id="album_location" />
+    </p>
+    <p>相簿說明: 
+        <textarea name="album_desc" id="album_desc" cols="45" rows="5"></textarea>
+    </p>
+    <p>&nbsp</p>
+    <p>
+        <input type="submit" class="btn btn-primary" name="button" id="button" value="確定新增" />
+        <input type="button" class="btn btn-danger" name="button2" id="button2" value="回上一頁" onclick="window.history.back();" />
+    </p>
+    <span style="color:red">{{message}}</span>
+    </div>
+    </form>
+</div>
+{% endblock %}

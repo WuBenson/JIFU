@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block title %} 關於集福|集福工程行 {% endblock %} {% block content %} {% load staticfiles %}
+<link href="{% static "css/style.css"%}" rel="stylesheet" type="text/css" />
+
+{% comment %} 
+<script language="javascript">
+    window.initMap = function() {
+        var myCenter = {
+            lat: 22.8677275,
+            lng: 120.2672298
+        };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: {
+                lat: 22.8677275,
+                lng: 120.2672298
+            },
+            zoom: 18
+        });
+        var marker = new google.maps.Marker({
+            title: "合力土木工程公司-集福工程行",
+            animation: google.maps.Animation.BOUNCE,
+            position: myCenter,
+            map: map
+        });
+        var infowindow = new google.maps.InfoWindow();
+        infowindow.setContent('<h3>合力土木工程公司</h3><p>集福工程行</p>');
+        google.maps.event.addListener(marker, 'mouseover', function (event) {
+            infowindow.open(map, marker);
+        });
+
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPkvaR2dmvs_iqf7Nwqr6FpXb6RaWgOMc&callback=initMap"></script> 
+{% endcomment %}
+<div class="trafficInfo" style="width:100%;height:100%;text-align:center;">
+    <h2>交通位置</h2>
+    <hr>
+    <div style="padding-bottom:15px;font-size:12px">
+        <h2>合力土木工程公司-集福工程行</h2>
+        <h4 style="line-height:1.5;">
+            <span style="font-weight:bold;">地址：</span>高雄市路竹區仁愛路55號<br>
+            <span style="font-weight:bold;">電話：</span>0936-390-492、0970-673-733<br>
+            <span style="font-weight:bold;">傳真：</span>(07)697-7822<br>
+            <span style="font-weight:bold;">交通指南：</span>中山高速公路(國道1號) > 338-路竹出口 > 環球路/台28線 > 大智路左轉 > 大仁路右轉 > 仁愛路左轉 > 集福工程行
+        </h4>
+    </div>
+    <div style="border:1px solid black;margin:0px auto;display:inline-block"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3676.236021964921!2d120.26523491535232!3d22.86773802783466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e0cba36c1b9c1%3A0xfbfa1c8a388859eb!2zODIx6auY6ZuE5biC6Lev56u55Y2A5LuB5oSb6LevNTXomZ8!5e0!3m2!1szh-TW!2stw!4v1569659629427!5m2!1szh-TW!2stw" width="700" height="500" frameborder="0" style="border:0;" allowfullscreen=""></iframe></div>
+</div>
+
+{% endblock %}

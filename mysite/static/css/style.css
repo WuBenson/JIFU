@@ -1,0 +1,293 @@
+.info{
+    font-family: Microsoft JhengHei;
+    font-size: 24px;
+    display: block;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    
+}
+.pad{
+    padding-left: 25%;
+    padding-right: 25%;
+}
+.s{
+    display: block;
+    margin: 0 auto;
+    font-family: Microsoft JhengHei;
+    font-size: 24px;
+    /* padding-left: 25%;
+    padding-right: 25%; */
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color:#f8f9fa;
+}
+
+.picrow, .contentrow{
+    width:50%;
+    font-size: 28px;
+    /* font-weight: bolder; */
+}
+
+.nav-item{
+    font-size: 18px;
+    padding-left:20px; 
+    font-weight: bold;
+    font-family: Microsoft JhengHei;
+}
+
+.nav-item:hover{
+    background-color: #d4d4d4;
+}
+
+.footer{
+    padding-top: 10px;
+    font-size: 18px;
+    position: relative;
+    width: 100%;
+    background: #d4d4d4;
+    font-family: Microsoft JhengHei;
+    margin:auto 0px;
+    padding-bottom: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.card{
+    vertical-align : middle;
+    text-align:center;
+    height:100%;
+    margin: 0px auto;
+}
+
+.trafficInfo{
+
+    font-family: Microsoft JhengHei;
+}
+.trafficInfo h4{
+    padding:10px;
+    background-color: beige;
+    font-family: Microsoft JhengHei;
+    display: inline-block;
+    text-align: left;
+    margin: auto;
+}
+.panel-body{
+    font-size: 20px;
+    font-family: Microsoft JhengHei;
+
+}
+
+.panel, .hireInfo{
+    width:50%;
+}
+
+#map{
+    width:900px;
+}
+
+html{
+    height:100%;
+    
+}
+
+p{
+    font-size: 20px;
+}
+
+p.card-text{
+    font-size: 20px;
+}
+
+hr{
+    border-color:orange;
+    size:5px;
+    width:50%;
+}
+
+
+* {box-sizing: border-box;}
+
+.mySlides {display: none;}
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: fit-content;
+  position: relative;
+  margin: auto;
+  width:70%;
+}
+
+/* Caption text */
+.text {
+  color: red;
+  font-family: Microsoft JhengHei;
+  font-size: 36px;
+  font-weight: bold;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 15%;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color:#d4d4d4;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.8s ease-out;
+}
+
+.dot_active{
+    background-color:#717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  animation-name: fade;
+  animation-duration: 2s;
+}
+.myborder{
+    border-style: groove;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .7} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .7} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+.album {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 3%;
+}
+
+.album:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+
+@media screen and (max-width:1100px){
+    img.logo{
+        width:100%;
+    }
+    .trafficInfo.map{
+        width:100%;
+    }
+    .info, .pad{
+        padding-left: 12%;
+        padding-right: 12%;
+        font-size: 11px;
+    }
+    .ctext{
+        font-size:9px;
+    }
+    .footer, .btn-lg, .dropdown-item{
+        font-size: 11px;
+    }
+    h2{
+        font-size: 17px;
+    }
+    h3{
+        font-size: 14px;
+    }
+    h4, p, .s{
+        font-size: 11px;
+    }
+    .nav-link{
+        font-size: 12px;
+    }
+    #map{
+        width:100%;
+    }
+    #id_user_name, #id_user_email, #id_user_phone, #id_user_msg, #id_captcha_1{
+        width:100%;
+    }
+    .myborder{
+        border-style: none;
+    }
+    p.card-text{
+        font-size: 13px;
+    }
+    .slideshow-container{
+        width:100%;
+    }
+    .picrow{
+        width:65%;
+    }
+    .contentrow{
+        width:75%;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:510px){
+    .panel.panel-primary, .hireInfo{
+        width:95%;
+    }
+
+}
+
+
+.cont{
+    position: relative;
+    display: block;
+    margin:auto;
+    width: 50%;
+  }
+  
+  .image {
+     
+    display:block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: ForestGreen ;
+    overflow: hidden;
+    width: 100%;
+    height:0;
+    transition: .5s ease;
+  }
+  
+  .cont:hover .overlay, .cont:active .overlay{
+    bottom: 0;
+    height: 100%;
+  }
+  
+  .ctext {
+    white-space: normal; 
+    color: white;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-family: Microsoft JhengHei;
+    font-weight:bolder; 
+  }

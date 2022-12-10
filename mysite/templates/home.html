@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+{% block title %}
+合力土木工程公司-集福工程行
+{% endblock %}
+{% block content %}
+{% load staticfiles %}
+<link href="{% static "css/style.css"%}" rel="stylesheet" type="text/css"/>
+
+
+
+<div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="{% static "images/photo1.jpg"%}" style="width:100%;height:auto;">
+          <!-- <div class="text">專業用心、品質第一</div> -->
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="{% static "images/photo3.jpg"%}" style="width:100%;height:auto;">
+          <!-- <div class="text">專業用心、品質第一</div> -->
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="{% static "images/photo5.jpg"%}" style="width:100%;height:auto;">
+          <!-- <div class="text">專業用心、品質第一</div> -->
+        </div>
+
+        <div class="mySlides fade">
+          <img src="{% static "images/nphoto8.jpg"%}" style="width:100%;height:auto;">
+          <!-- <div class="text">專業用心、品質第一</div> -->
+        </div>
+
+        <div class="mySlides fade">
+          <img src="{% static "images/nphoto9.jpg"%}" style="width:100%;height:auto;">
+          <!-- <div class="text">專業用心、品質第一</div> -->
+        </div>
+
+        <div class="mySlides fade">
+          <img src="{% static "images/nphoto10.jpg"%}" style="width:100%;height:auto;">
+          <!-- <div class="text">專業用心、品質第一</div> -->
+        </div>
+        
+</div>
+        <br>
+        
+<div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span>
+</div>
+
+<script>
+        var slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+               slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" dot_active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " dot_active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    
+</script>
+
+
+<div>
+    <br><br><br>
+    <img class="logo" alt="" src="{% static "images/logo.jpg"%}" style="display:block;margin:auto;height:auto;">
+</div>
+<!-- <div class="info" style="background-color:#f8f9fa;">
+    <span style="font-weight:bold;text-align:center;display:block;">關於</span><hr>
+    <ol type="I">
+        <li>主力經銷各廠牌高壓混凝土磚(天九、中美、聚昱、艾鎂、新豐、台富、美莊)並可提供客戶磚材產品之環保標章及綠建材標章相關證明文件。</li>
+        <ul style="list-style-type:square">
+            <li>產品有：高壓地磚、透水磚、岩面磚、仿古磚、植草磚、界石、圍牆百歲磚、擋土牆⋯等特殊景觀磚材。</li>
+        </ul>
+        <li>擁有業界最具專業連工帶料施工團隊。</li>
+        <ul style="list-style-type:square">
+            <li>
+                項目有：基地開挖整地、襯砂至磚材施工鋪設、庭院基地整理開發
+            </li>
+        </ul>
+        <li>提供業主及設計監造單位磚材鋪面設計圖與圖稿提供最完善的工程施工服務品質</li>
+    </ol>
+</div> -->
+
+<!-- <div class="info" style="background-color:#f8f9fa;">
+        <span style="font-weight:bold;text-align:center;display:block;">關於</span><hr>
+        主力經銷各廠牌高壓混凝土磚(天九、中美、聚昱、艾鎂、新豐、台富、美莊)並可提供客戶磚材產品之環保標章及綠建材標章相關證明文件。<br><br>
+        <div class="cont">
+            <img src="{% static "images/green.jpg"%}" alt="Avatar" class="image">
+            <div class="overlay">
+                <div class="ctext">
+                    產品有：<br>
+                    高壓地磚、透水磚、岩面磚、仿古磚、植草磚、界石、圍牆百歲磚、擋土牆等特殊景觀磚材。
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="info" >
+        <span style="font-weight:bold;text-align:center;display:block;">施工團隊</span><hr>
+        擁有業界最具專業連工帶料施工團隊並提供業主及設計監造單位磚材鋪面設計圖與圖稿提供最完善的工程施工服務品質。<br><br>
+        <div class="cont">
+            <img src="{% static "images/protect.png"%}" alt="Avatar" class="image">
+            <div class="overlay">
+                <div class="ctext">
+                    項目有：<br>
+                    基地開挖整地、襯砂至磚材施工鋪設、庭院基地整理開發。
+                </div>
+            </div>  
+        </div>
+</div> -->
+
+
+
+<div class="s">
+        <div class="pad">
+            <span style="font-weight:bold;text-align:center;display:block;">關於</span><hr>
+            <ul>
+                <li>主力經銷各廠牌高壓混凝土磚(天九、中美、聚昱、艾鎂、新豐、台富、美莊、民峰、三惠製材所)並可提供客戶磚材產品之環保標章及綠建材標章相關證明文件。</li>   
+                <li>擁有業界最具專業連工帶料施工團隊，提供最完善的工程施工服務品質。</li>
+                <li>提供業主及設計監造單位磚材鋪面設計圖與圖稿。</li>
+            </ul>
+        </div>
+        <div class="row picrow" style="margin:0 auto;">
+            <div class="col">
+                <img src="{% static "images/protect.png"%}" alt="Avatar" width="100%">
+            </div>
+            <div class="col">
+                <img src="{% static "images/icon-green.png"%}" alt="Avatar" width="85%" >
+            </div>
+        </div>
+        {% comment %} <div class="row contentrow" style="margin:0 auto;">
+            <div class="col" style="border-style:none groove none none">
+                <span style="font-weight:bolder;text-decoration:underline;">景觀磚材:<br></span>
+                界石<br>
+                透水磚<br>
+                岩面磚<br>
+                仿古磚<br>
+                植草磚<br>
+                高壓地磚<br>
+                圍牆百歲磚<br>
+                擋土牆等(特殊磚材)
+            </div>
+            <div class="col"style="border-style:none none none groove">
+                <span style="font-weight:bolder;text-decoration:underline;">工程項目：<br></span>
+                開挖整地<br>
+                級配襯砂<br>
+                土水泥作工程<br> 
+                景觀磚材施工鋪設<br>
+                各式磚材吊掛安裝<br>
+                庭院基地整理開發<br>
+                營建土石方廢棄物拆除及清運
+            </div>
+        </div> {% endcomment %}
+
+        <div class="pad">
+            <span style="font-weight:bold;text-align:center;display:block;">營業項目</span><hr>
+            <span style="font-weight:bold;font-size:24px;text-align:center;display:block;">工程&產品洽詢專線:  <br><u>0970-673-733  業務部-陳經理</u><br><br></span>
+            <span style="font-weight:bold;text-align:center;display:block;">南部業界最具規模連工帶料團隊－綠建材&環保標章<br></span>
+            <span style="text-align:center;display:block;">【雲林施工、嘉義施工、台南施工、高雄施工、屏東施工】<br><br></span>
+            <ul>
+                <li>高壓混凝土地磚(透水磚、連鎖磚、植草磚、環保玻璃磚、麵包磚、木紋磚、進口陶磚、空心磚、圍牆磚、岩面磚、百歲磚、切面磚、花格磚、清水磚、清水模磚、坡崁磚、路緣石、收邊界石、磚砌擋土牆、建築使照驗收用磚)</li>
+                <li>透水混凝土連工帶料</li>
+                <li>各式石材地坪施工(花崗石&大理石)</li>
+                <li>預鑄水泥製品施工</li>
+                <li>大型水泥製品吊掛安裝</li>
+                <li>擋土石牆吊掛安裝</li>
+                <li>地坪改善工程</li>
+                <li>人行道地磚補修</li>
+                <li>庭院規劃整理樹木修剪</li>
+                <li>景觀工程規劃設計</li>
+                <li>開挖整地工程</li>
+                <li>專業營建物拆除工程</li>
+                <li>土方廢棄物回收處理</li>
+                <li>級配砂石</li>
+                <li>專用襯墊砂</li>
+            </ul>
+            <br>
+        
+            <table class="table table-bordered table-hover">
+                <tbody>
+                    <tr>
+                        <th scope="row" class="align-middle">適用範圍</th>
+                        <td class="align-middle">
+                            公家機關及私部門之人行道、車道、公園步道、停車場、廣場、廟宇、學校、觀光景點、民宿、住宅庭院等。
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="align-middle">工程實績</th>
+                        <td class="align-middle">
+                            近期公私部門工程案件:<br>
+                            <ol>
+                                <li>高雄海洋科技產業創新專區-興達水下基礎基地</li>
+                                <li>台鐵鳳山車站(地下化新站)</li>
+                                <li>臺灣史前文化博物館-南科考古館</li>
+                                <li>台南智慧綠能科學城-綠能科技示範場域</li>
+                                <li>台南市城西三期垃圾衛生掩埋場預鑄混凝土異型塊吊掛安裝工程</li>
+                                <li>台灣原住民文化園區</li>
+                                <li>中石化林園廠</li>
+                                <li>華友聯集團建案</li>
+                                <li>永信集團建案</li>
+                                <li>碳佐麻里高雄夢時代店</li>
+                                <li>國立中正大學</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        
+        </div>      
+</div>
+
+<div class="info" >
+        <span style="font-weight:bold;text-align:center;display:block;">公司簡介</span><hr>
+            集福工程行成立至今逾25年，現今已陸續交棒於第二代永續經營。
+            集福工程秉持專業全方位服務、嚴謹施工品質管控之精神理念奉獻於南部地磚景觀營造之本業。
+            透過景觀再造符合基地透水、散熱以達地球永續發展為宗旨，建立舒適、樂活永續家園為目標。
+            <br>
+            <br>
+        <span style="font-weight:bold;text-align:center;display:block;color:red">※ 專業連工帶料團隊 集福用心 品質第一 ※</span>
+</div>
+
+{% endblock %}
